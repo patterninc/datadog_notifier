@@ -7,6 +7,7 @@
 ### bundle install
 ```bundle install```
 ### Send notification to datadog(Traces to add errors in Datadog)
-```DatadogNotifier.notify(exception)```
+```DatadogNotifier.notify(exception, payload_json)```
 
 Here `exception` is the error same as we send for Airbrake i.e `Airbrake.notify(exception)`
+`payload_json` is an optional parameter where we can pass the payload to error tracking
