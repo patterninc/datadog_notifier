@@ -31,4 +31,4 @@ The errors shown in Dashboard can be seen in Datadog traces as well
   <img width="1462" alt="Screenshot 2023-12-20 at 11 43 16 AM" src="https://github.com/patterninc/datadog_notifier/assets/10542896/849d0e83-65da-4e9b-ac48-1a5f3a834fc8">
 
 ## Replace Airbrake with DatadogNotifier
-Just replace **Airbrake.notify** with **DatadogNotifier.notify**
+Just replace **Airbrake.notify** / **Airbrake.notify_sync** with **DatadogNotifier.notify**

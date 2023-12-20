@@ -4,6 +4,7 @@ class DatadogNotifier
   def self.notify(exception, payload = {})
     root_span = find_root_span(Datadog::Tracing.active_span)
     root_span.set_error(exception)
+    root_span.set_tag('custom_dd_notifier', true)
     root_span.set_tag('payload', payload.to_json) if payload.present?
   end
 
