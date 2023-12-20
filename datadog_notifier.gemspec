@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ['amol.udage@pattern.com']
   spec.files         = Dir['lib/**/*.rb']  # Include your Ruby file(s)
   # Add any additional dependencies
-  spec.add_dependency 'ddtrace', '~> 1.15.0'
+  spec.add_dependency 'ddtrace', '>= 1.13.0'
 
   # Specify the main file to require when the gem is loaded
   spec.require_paths = ['lib']
