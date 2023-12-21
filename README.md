@@ -32,3 +32,5 @@ The errors shown in Dashboard can be seen in Datadog traces as well
 
 ## Replace Airbrake with DatadogNotifier
 Just replace **Airbrake.notify** / **Airbrake.notify_sync** with **DatadogNotifier.notify**
+
+Marketczar PR for reference - https://github.com/patterninc/marketczar/pull/115/commits/4a83e47ac621a630e9521f10bdadba7ca337f7a6
