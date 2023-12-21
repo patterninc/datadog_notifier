@@ -10,7 +10,7 @@
 
 
 ### Add this gem to your gemfile
-``` gem 'datadog_notifier', git: 'https://github.com/patterninc/datadog_notifier.git'```
+``` gem 'datadog_notifier', git: 'https://github.com/patterninc/datadog_notifier.git', tag: 'v1.0.0'```
 
 ### bundle install
 ```bundle install```
