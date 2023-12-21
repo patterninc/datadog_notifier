@@ -35,4 +35,4 @@ Just replace **Airbrake.notify** / **Airbrake.notify_sync** with **DatadogNotifi
 Before: Airbrake.notify("ProductErrorForm: Error while scraping new product", error_params)
 After: DatadogNotifier.notify("ProductErrorForm: Error while scraping new product", error_params)
 ```
-Marketczar PR reference for deprecating Airbrake - [PR 115](https://github.com/patterninc/marketczar/pull/115/commits/4a83e47ac621a630e9521f10bdadba7ca337f7a6)https://github.com/patterninc/marketczar/pull/115/commits/4a83e47ac621a630e9521f10bdadba7ca337f7a6
+Marketczar PR reference for deprecating Airbrake - [PR 115](https://github.com/patterninc/marketczar/pull/115/commits/4a83e47ac621a630e9521f10bdadba7ca337f7a6)
