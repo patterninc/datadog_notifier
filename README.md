@@ -5,7 +5,7 @@
 ## Installation
 
 ### Add this gem to your gemfile
-``` gem 'datadog_notifier', git: 'https://github.com/patterninc/datadog_notifier.git', tag: 'v1.0.0'```
+``` gem 'datadog_notifier', git: 'https://github.com/patterninc/datadog_notifier.git', tag: 'v1.0.1'```
 
 ### bundle install
 ```bundle install```
@@ -32,7 +32,7 @@ Here `exception` is the error same as we send for Airbrake i.e `Airbrake.notify(
 We have kept DatadogNotifier signature same as Airbrake notifier. This will help us to just search and replace all occurences.
 Just replace **Airbrake.notify** / **Airbrake.notify_sync** with **DatadogNotifier.notify**
 ```
-Before: Airbrake.notify("ProductErrorForm: Error while scraping new product", error_params)
-After: DatadogNotifier.notify("ProductErrorForm: Error while scraping new product", error_params)
+Before: Airbrake.notify("ProductErrorForm: Error while scraping new product", error_params_json)
+After: DatadogNotifier.notify("ProductErrorForm: Error while scraping new product", error_params_json)
 ```
 Marketczar PR reference for deprecating Airbrake - [PR 115](https://github.com/patterninc/marketczar/pull/115/commits/4a83e47ac621a630e9521f10bdadba7ca337f7a6)
