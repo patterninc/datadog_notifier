@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'ddtrace'
+require 'datadog_notifier_exception'
 
 class DatadogNotifier
   def self.notify(exception, payload = {})
