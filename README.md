@@ -5,7 +5,7 @@
 ## Installation
 
 ### Add this gem to your gemfile
-``` gem 'datadog_notifier', git: 'https://github.com/patterninc/datadog_notifier.git', tag: 'v1.0.1'```
+``` gem 'datadog_notifier', git: 'https://github.com/patterninc/datadog_notifier.git', tag: 'v1.0.2'```
 
 ### bundle install
 ```bundle install```
