@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'datadog_notifier'
-  spec.version       = '0.1.0'
+  spec.version       = '1.0.2'
   spec.summary       = 'Datadog notifier to send custom errors'
   spec.description   = 'Datadog notifier to send custom errors in Datadog error tracking dashboard'
   spec.authors       = ['Amol Udage']
