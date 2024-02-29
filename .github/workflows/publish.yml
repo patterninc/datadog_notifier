@@ -15,10 +15,10 @@ jobs:
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7
+          ruby-version: 2.7.0
 
       - name: Install dependencies
-        run: gem install bundler && bundle install --jobs 4 --retry 3
+        run: gem install bundler -v 2.4.22 && bundle install --jobs 4 --retry 3
 
       - name: Publish gem
         if: github.ref == 'refs/tags/v*'
