@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.required_ruby_version = ">= 2.7.0"
 
-  spec.add_development_dependency "bundler", "~> 2.2.3"
+  spec.add_development_dependency "bundler", "~> 2.4.22"
   spec.add_development_dependency "rake", "~> 13.0"
  
   spec.add_dependency 'ddtrace', '>= 1.13.0'
