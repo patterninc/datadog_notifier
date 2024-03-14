@@ -2,7 +2,7 @@
 
 require 'ddtrace'
 require 'datadog_notifier_exception'
-require "datadog_notifier/version"
+require 'datadog_notifier/version'
 
 # DatadogNotifier for custom error notification to datadog
 class DatadogNotifier

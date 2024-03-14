@@ -6,16 +6,16 @@ on:
       - 'v*' # Trigger on version tags, e.g., v1.0.0
 
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Build gem
+        run: gem build datadog_notifier.gemspec
+
       - name: Publish gem
-        if: github.ref == 'refs/tags/v*'
-        uses: cadwallion/publish-rubygems-action@master
+        run: gem publish *.gem
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
           RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
-          RELEASE_COMMAND: rake release
