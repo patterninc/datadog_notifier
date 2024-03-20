@@ -7,6 +7,8 @@ require 'datadog_notifier/version'
 # DatadogNotifier for custom error notification to datadog
 class DatadogNotifier
   def self.notify(exception, payload = {})
+    return if Datadog::Tracing.active_span.nil?
+
     root_span = find_root_span(Datadog::Tracing.active_span)
     if exception.is_a?(String)
       exception = DatadogNotifierException.new exception
