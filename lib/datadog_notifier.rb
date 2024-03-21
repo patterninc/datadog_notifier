@@ -10,7 +10,8 @@ class DatadogNotifier
     root_span = find_root_span(Datadog::Tracing.active_span)
     if exception.is_a?(String)
       exception = DatadogNotifierException.new exception
-      exception.set_backtrace(payload.inspect)
+      backtrace = fetch_backtrace(payload)
+      exception.set_backtrace(backtrace.inspect)
     end
     root_span.set_error(exception)
     root_span.set_tag('custom_dd_notifier', true)
@@ -21,5 +22,11 @@ class DatadogNotifier
     current_span = child_span
     current_span = current_span.send(:parent) while current_span.send(:parent)
     current_span
+  end
+
+  def self.fetch_backtrace(exception)
+    return { custom_exception: true } if exception.blank?
+    return exception.backtrace if exception.class.ancestors.include?(StandardError)
+    exception
   end
 end
