@@ -12,13 +12,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Install ddtrace gem
-        run: gem install ddtrace
-
       - name: Build gem
         run: gem build datadog_notifier.gemspec
 
       - name: Publish gem
-        run: gem publish *.gem
+        run: gem push *.gem
         env:
           RUBYGEMS_API_KEY: ${{ secrets.RUBYGEMS_API_KEY }}
