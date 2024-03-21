@@ -12,6 +12,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Install ddtrace gem
+        run: gem install ddtrace
+
       - name: Build gem
         run: gem build datadog_notifier.gemspec
 
