@@ -21,7 +21,7 @@ Or install it yourself as:
 
 ### Dependency
 * [Datadog](https://github.com/DataDog/dd-trace-rb) must be integrated in the project before we use this gem
-
+* use version <=1.0.4 for ruby <3.4
 # Quick Use
 ## Send notification to datadog(Traces to add errors in Datadog)
 ```DatadogNotifier.notify(exception, payload_json)```
