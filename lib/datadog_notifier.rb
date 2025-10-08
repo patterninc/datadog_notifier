@@ -1,6 +1,10 @@
 # frozen_string_literal: true
 
-require 'ddtrace'
+if RUBY_VERSION < '3.4'
+  require 'ddtrace'
+else
+  require 'datadog'
+end
 require 'datadog_notifier_exception'
 require 'datadog_notifier/version'
 
