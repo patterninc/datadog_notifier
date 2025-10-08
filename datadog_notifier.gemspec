@@ -10,12 +10,12 @@ Gem::Specification.new do |spec|
   spec.version       = DatadogNotifier::VERSION
   spec.authors       = ['Patterninc']
   spec.email         = ['amol.udage@pattern.com']
-  spec.summary       = 'Datadog notifier to send custom errors with ddtrace'
+  spec.summary       = 'Datadog notifier to send custom errors with datadog'
   spec.description   = 'Datadog notifier to send custom errors in Datadog error tracking dashboard'
   spec.homepage      = 'https://github.com/patterninc/datadog_notifier'
   spec.license       = 'MIT'
 
-  spec.add_dependency 'ddtrace', '>= 1.13.0'
+  spec.add_dependency 'datadog', '>= 2.0.0'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
