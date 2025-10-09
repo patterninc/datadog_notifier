@@ -15,7 +15,10 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/patterninc/datadog_notifier'
   spec.license       = 'MIT'
 
-  if RUBY_VERSION >= '3.4'
+  ruby_version = Gem::Version.new(RUBY_VERSION)
+  breaking_version = Gem::Version.new('3.4')
+  
+  if ruby_version >= breaking_version
     spec.add_dependency 'datadog', '>= 2.0.0'
   else
     spec.add_dependency 'ddtrace', '>= 1.13.0'
