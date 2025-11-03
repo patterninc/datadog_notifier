@@ -2,7 +2,7 @@
 
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'datadog_notifier'
+# Don't require datadog_notifier here - it has dependencies that aren't installed yet during bundle install
 require 'datadog_notifier/version'
 
 Gem::Specification.new do |spec|
