@@ -2,7 +2,7 @@
 
 lib = File.expand_path('lib', __dir__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'datadog_notifier'
+# Don't require datadog_notifier here - it has dependencies that aren't installed yet during bundle install
 require 'datadog_notifier/version'
 
 Gem::Specification.new do |spec|
@@ -10,12 +10,19 @@ Gem::Specification.new do |spec|
   spec.version       = DatadogNotifier::VERSION
   spec.authors       = ['Patterninc']
   spec.email         = ['amol.udage@pattern.com']
-  spec.summary       = 'Datadog notifier to send custom errors with ddtrace'
+  spec.summary       = 'Datadog notifier to send custom errors with datadog'
   spec.description   = 'Datadog notifier to send custom errors in Datadog error tracking dashboard'
   spec.homepage      = 'https://github.com/patterninc/datadog_notifier'
   spec.license       = 'MIT'
 
-  spec.add_dependency 'ddtrace', '>= 1.13.0'
+  ruby_version = Gem::Version.new(RUBY_VERSION)
+  breaking_version = Gem::Version.new('3.4')
+  
+  if ruby_version >= breaking_version
+    spec.add_dependency 'datadog', '>= 2.0.0'
+  else
+    spec.add_dependency 'ddtrace', '>= 1.13.0'
+  end
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
