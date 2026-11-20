@@ -15,10 +15,6 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/patterninc/datadog_notifier'
   spec.license       = 'MIT'
 
-  # No runtime dependency on the tracer: the host app must bundle either `datadog` (>= 2.0, any Ruby)
-  # or `ddtrace` (>= 1.13, Ruby < 3.4). A gemspec condition on RUBY_VERSION would be frozen at
-  # `gem build` time, so the published gem would carry the wrong dependency for some consumers.
-
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
   spec.files         = Dir.chdir(File.expand_path(__dir__)) do

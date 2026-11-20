@@ -2,7 +2,9 @@
 
 begin
   require 'datadog'
-rescue LoadError
+rescue LoadError => e
+  raise unless e.path == 'datadog'
+
   require 'ddtrace'
 end
 require 'datadog_notifier_exception'
