@@ -20,8 +20,11 @@ Or install it yourself as:
     $ gem install datadog_notifier
 
 ### Dependency
-* [Datadog](https://github.com/DataDog/dd-trace-rb) must be integrated in the project before we use this gem
-* use version <=1.0.4 for ruby <3.4
+* [Datadog](https://github.com/DataDog/dd-trace-rb) must be integrated in the project before we use this gem.
+  The gem does not depend on a tracer itself; it loads whichever one your Gemfile bundles:
+  * `gem 'datadog'` (>= 2.0) — required on Ruby 3.4+, works on older Rubies too
+  * `gem 'ddtrace'` (>= 1.13) — Ruby < 3.4 only
+* Versions <= 1.0.4 hard-depend on `ddtrace` and cannot be installed on Ruby 3.4+; use `~> 1.2` instead
 # Quick Use
 ## Send notification to datadog(Traces to add errors in Datadog)
 ```DatadogNotifier.notify(exception, payload_json)```

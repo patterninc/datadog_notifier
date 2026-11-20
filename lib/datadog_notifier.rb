@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-if RUBY_VERSION < '3.4'
-  require 'ddtrace'
-else
+begin
   require 'datadog'
+rescue LoadError
+  require 'ddtrace'
 end
 require 'datadog_notifier_exception'
 require 'datadog_notifier/version'
